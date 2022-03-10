@@ -1,0 +1,44 @@
+create table university(regid int primary key,stdname varchar(20),gender varchar(10),year int,collegename varchar(20));
+
+Table created.
+
+SQL> insert into university values(1001,'madhuri','female',2021,'aditya');
+
+1 row created.
+
+SQL> insert into university values(1002,'rajesh','male',2021,'aditya');
+
+1 row created.
+
+SQL> insert into university values(1003,'saritha','female',2021,'aditya');
+
+1 row created.
+
+SQL> insert into university values(1004,'priya','female',2021,'aditya');
+
+1 row created.
+
+SQL> insert into university values(1005,'divya','female',2021,'aditya');
+
+1 row created.
+
+SQL> insert into university values(1006,'renuka','female',2021,'aditya');
+
+1 row created.
+
+SQL> insert into university values(1007,'renuka','female',2021,'aditya');
+
+1 row created.
+SQL> select*from university;
+
+     REGID STDNAME              GENDER           YEAR COLLEGENAME
+---------- -------------------- ---------- ---------- --------------------
+      1001 madhuri              female           2021 aditya
+      1002 rajesh               male             2021 aditya
+      1003 saritha              female           2021 aditya
+      1004 priya                female           2021 aditya
+      1005 divya                female           2021 aditya
+      1006 renuka               female           2021 aditya
+      1007 chandrakala          female           2021 aditya
+
+7 rows selected.
