@@ -1,0 +1,73 @@
+SQL> insert into system.employee values(&no,'&name','&desig',&sal);
+
+SQL> select * from system.employee;
+
+       ENO ENAME                          DESIGN                   SALARY
+---------- ------------------------------ -------------------- ----------
+         1 satya                         manager                   45000
+         2 sri                           engineer                  33000
+         3 satya sri                     analyst                   40000
+         4 sri satya                     developer                 30000
+         5 aditya                        team leader               40000
+       
+       
+SQL> commit;
+
+Commit complete.
+
+
+SQL> savepoint xxx;
+
+Savepoint created.
+
+SQL>  insert into system.employee values(&no,'&name','&desig',&sal);
+
+SQL> select * from system.employee;
+
+       ENO ENAME                          DESIGN                   SALARY
+---------- ------------------------------ -------------------- ----------
+         1 satya                          manager                   45000
+         2 sri                            engineer                  33000
+         3 satya sri                      analyst                   40000
+         4 sri satya                      developer                 30000
+         5 aditya                         team leader               40000
+         6 sai                            manager                   40000
+         7 sai aditya                     manager                   25000
+
+SQL> savepoint yyy;
+
+Savepoint created.
+
+SQL> rollback to xxx;
+
+Rollback complete.
+
+SQL> select * from system.employee;
+
+       ENO ENAME                          DESIGN                   SALARY
+---------- ------------------------------ -------------------- ----------
+         1 satya                          manager                   45000
+         2 sri                            engineer                  33000
+         3 satya sri                      analyst                   40000
+         4 sri satya                      developer                 30000
+         5 aditya                         team leader               40000
+       
+       
+SQL>  insert into system.employee values(&no,'&name','&desig',&sal);
+
+SQL> select *from system.employee;
+
+       ENO ENAME                          DESIGN                   SALARY
+---------- ------------------------------ -------------------- ----------
+         1 satya                        manager                   45000
+         2 sri                          engineer                  33000
+         3 satya sri                    analyst                   40000
+         4 sri satya                    developer                 30000
+         5 aditya                       team leader               40000
+         6 sri aditya                   analyst                   50000
+         7 ramu                         manager                   45000
+
+
+SQL> commit;
+
+Commit complete.
