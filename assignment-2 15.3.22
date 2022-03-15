@@ -1,0 +1,94 @@
+assignment-2
+SQL> insert into registration values(&redno,'&name','&gender','&qualification',&age);
+Enter value for redno: 123
+Enter value for name: abc
+Enter value for gender: female
+Enter value for qualification: mca
+Enter value for age: 26
+old   1: insert into registration values(&redno,'&name','&gender','&qualification',&age)
+new   1: insert into registration values(123,'abc','female','mca',26)
+
+1 row created.
+
+SQL> /
+Enter value for redno: 111
+Enter value for name: aaa
+Enter value for gender: male
+Enter value for qualification: bsc
+Enter value for age: 23
+old   1: insert into registration values(&redno,'&name','&gender','&qualification',&age)
+new   1: insert into registration values(111,'aaa','male','bsc',23)
+
+1 row created.
+
+SQL> /
+Enter value for redno: 222
+Enter value for name: bbb
+Enter value for gender: female
+Enter value for qualification: msc
+Enter value for age: 25
+old   1: insert into registration values(&redno,'&name','&gender','&qualification',&age)
+new   1: insert into registration values(222,'bbb','female','msc',25)
+
+1 row created.
+
+SQL> /
+Enter value for redno: 333
+Enter value for name: ccc
+Enter value for gender: male
+Enter value for qualification: bba
+Enter value for age: 27
+old   1: insert into registration values(&redno,'&name','&gender','&qualification',&age)
+new   1: insert into registration values(333,'ccc','male','bba',27)
+
+1 row created.
+
+SQL> /
+Enter value for redno: 333
+Enter value for name: ddd
+Enter value for gender: female
+Enter value for qualification: mba
+Enter value for age: 25
+old   1: insert into registration values(&redno,'&name','&gender','&qualification',&age)
+new   1: insert into registration values(333,'ddd','female','mba',25)
+
+1 row created.
+
+SQL> select *from registration;
+
+     REDNO CANDNAME                       GENDER  QUALIFICATION
+---------- ------------------------------ ------- --------------------
+       AGE
+----------
+       123 abc                            female  mca
+        26
+
+       111 aaa                            male    bsc
+        23
+
+       222 bbb                            female  msc
+        25
+
+
+     REDNO CANDNAME                       GENDER  QUALIFICATION
+---------- ------------------------------ ------- --------------------
+       AGE
+----------
+       333 ccc                            male    bba
+        27
+
+       333 ddd                            female  mba
+        25
+
+
+SQL> select *from registration where gender='male';
+
+     REDNO CANDNAME                       GENDER  QUALIFICATION
+---------- ------------------------------ ------- --------------------
+       AGE
+----------
+       111 aaa                            male    bsc
+        23
+
+       333 ccc                            male    bba
+        27
