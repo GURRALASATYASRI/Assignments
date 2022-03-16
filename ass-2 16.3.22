@@ -1,0 +1,498 @@
+SQL> insert into apsrtc values('&service_num','&service_type','&boarding','&upto',&kms,&price);
+Enter value for service_num: 222
+Enter value for service_type: luxury
+Enter value for boarding: kkd
+Enter value for upto: vzm
+Enter value for kms: 350
+Enter value for price: 250
+old   1: insert into apsrtc values('&service_num','&service_type','&boarding','&upto',&kms,&price)
+new   1: insert into apsrtc values('222','luxury','kkd','vzm',350,250)
+
+1 row created.
+
+SQL> /
+Enter value for service_num: 333
+Enter value for service_type: luxury
+Enter value for boarding: vzm
+Enter value for upto: kkd
+Enter value for kms: 350
+Enter value for price: 250
+old   1: insert into apsrtc values('&service_num','&service_type','&boarding','&upto',&kms,&price)
+new   1: insert into apsrtc values('333','luxury','vzm','kkd',350,250)
+
+1 row created.
+
+SQL> /
+Enter value for service_num: 123
+Enter value for service_type: luxury
+Enter value for boarding: kkd
+Enter value for upto: rjy
+Enter value for kms: 100
+Enter value for price: 80
+old   1: insert into apsrtc values('&service_num','&service_type','&boarding','&upto',&kms,&price)
+new   1: insert into apsrtc values('123','luxury','kkd','rjy',100,80)
+
+1 row created.
+
+SQL> /
+Enter value for service_num: 1234
+Enter value for service_type: luxury
+Enter value for boarding: kkd
+Enter value for upto: amp
+Enter value for kms: 120
+Enter value for price: 75
+old   1: insert into apsrtc values('&service_num','&service_type','&boarding','&upto',&kms,&price)
+new   1: insert into apsrtc values('1234','luxury','kkd','amp',120,75)
+
+1 row created.
+
+SQL> /
+Enter value for service_num: 234
+Enter value for service_type: luxury
+Enter value for boarding: amp
+Enter value for upto: kkd
+Enter value for kms: 120
+Enter value for price: 75
+old   1: insert into apsrtc values('&service_num','&service_type','&boarding','&upto',&kms,&price)
+new   1: insert into apsrtc values('234','luxury','amp','kkd',120,75)
+
+1 row created.
+
+SQL> /
+Enter value for service_num: 432
+Enter value for service_type: luxury
+Enter value for boarding: kkd
+Enter value for upto: hyd
+Enter value for kms: 600
+Enter value for price: 1200
+old   1: insert into apsrtc values('&service_num','&service_type','&boarding','&upto',&kms,&price)
+new   1: insert into apsrtc values('432','luxury','kkd','hyd',600,1200)
+
+1 row created.
+
+SQL> /
+Enter value for service_num: 6543
+Enter value for service_type: luxury
+Enter value for boarding: kkd
+Enter value for upto: anavaram
+Enter value for kms: 130
+Enter value for price: 90
+old   1: insert into apsrtc values('&service_num','&service_type','&boarding','&upto',&kms,&price)
+new   1: insert into apsrtc values('6543','luxury','kkd','anavaram',130,90)
+
+1 row created.
+
+SQL> /
+Enter value for service_num: 432
+Enter value for service_type: luxury
+Enter value for boarding: kkd
+Enter value for upto: smlkt
+Enter value for kms: 50
+Enter value for price: 30
+old   1: insert into apsrtc values('&service_num','&service_type','&boarding','&upto',&kms,&price)
+new   1: insert into apsrtc values('432','luxury','kkd','smlkt',50,30)
+insert into apsrtc values('432','luxury','kkd','smlkt',50,30)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (SYSTEM.SYS_C004086) violated
+
+
+SQL> /
+Enter value for service_num: 543
+Enter value for service_type: luxury
+Enter value for boarding: kkd
+Enter value for upto: smlkt
+Enter value for kms: 50
+Enter value for price: 30
+old   1: insert into apsrtc values('&service_num','&service_type','&boarding','&upto',&kms,&price)
+new   1: insert into apsrtc values('543','luxury','kkd','smlkt',50,30)
+
+1 row created.
+
+SQL> /
+Enter value for service_num: 678
+Enter value for service_type: luxury
+Enter value for boarding: kkd
+Enter value for upto: drm
+Enter value for kms: 35
+Enter value for price: 20
+old   1: insert into apsrtc values('&service_num','&service_type','&boarding','&upto',&kms,&price)
+new   1: insert into apsrtc values('678','luxury','kkd','drm',35,20)
+
+1 row created.
+
+SQL> /
+Enter value for service_num: 777
+Enter value for service_type: luxury
+Enter value for boarding: kkd
+Enter value for upto: rmc
+Enter value for kms: 40
+Enter value for price: 25
+old   1: insert into apsrtc values('&service_num','&service_type','&boarding','&upto',&kms,&price)
+new   1: insert into apsrtc values('777','luxury','kkd','rmc',40,25)
+
+1 row created.
+
+SQL> select * from APSRTC;
+
+SERVICE_NO SERVICE_TYPE         BOARDING        UPTO                   KMS
+---------- -------------------- --------------- --------------- ----------
+TICKET_PRICE
+------------
+222        luxury               kkd             vzm                    350
+         250
+
+333        luxury               vzm             kkd                    350
+         250
+
+123        luxury               kkd             rjy                    100
+          80
+
+
+SERVICE_NO SERVICE_TYPE         BOARDING        UPTO                   KMS
+---------- -------------------- --------------- --------------- ----------
+TICKET_PRICE
+------------
+1234       luxury               kkd             amp                    120
+          75
+
+234        luxury               amp             kkd                    120
+          75
+
+432        luxury               kkd             hyd                    600
+        1200
+
+
+SERVICE_NO SERVICE_TYPE         BOARDING        UPTO                   KMS
+---------- -------------------- --------------- --------------- ----------
+TICKET_PRICE
+------------
+6543       luxury               kkd             anavaram               130
+          90
+
+543        luxury               kkd             smlkt                   50
+          30
+
+678        luxury               kkd             drm                     35
+          20
+
+
+SERVICE_NO SERVICE_TYPE         BOARDING        UPTO                   KMS
+---------- -------------------- --------------- --------------- ----------
+TICKET_PRICE
+------------
+777        luxury               kkd             rmc                     40
+          25
+
+
+10 rows selected.
+
+SQL> update apsrtc set ticket_price=100 where kms > 500;
+
+1 row updated.
+
+SQL> select * from apsrtc;
+
+SERVICE_NO SERVICE_TYPE         BOARDING        UPTO                   KMS
+---------- -------------------- --------------- --------------- ----------
+TICKET_PRICE
+------------
+222        luxury               kkd             vzm                    350
+         250
+
+333        luxury               vzm             kkd                    350
+         250
+
+123        luxury               kkd             rjy                    100
+          80
+
+
+SERVICE_NO SERVICE_TYPE         BOARDING        UPTO                   KMS
+---------- -------------------- --------------- --------------- ----------
+TICKET_PRICE
+------------
+1234       luxury               kkd             amp                    120
+          75
+
+234        luxury               amp             kkd                    120
+          75
+
+432        luxury               kkd             hyd                    600
+         100
+
+
+SERVICE_NO SERVICE_TYPE         BOARDING        UPTO                   KMS
+---------- -------------------- --------------- --------------- ----------
+TICKET_PRICE
+------------
+6543       luxury               kkd             anavaram               130
+          90
+
+543        luxury               kkd             smlkt                   50
+          30
+
+678        luxury               kkd             drm                     35
+          20
+
+
+SERVICE_NO SERVICE_TYPE         BOARDING        UPTO                   KMS
+---------- -------------------- --------------- --------------- ----------
+TICKET_PRICE
+------------
+777        luxury               kkd             rmc                     40
+          25
+
+
+10 rows selected.
+
+SQL> update apsrtc set ticket_price=50 where kms < 500;
+
+9 rows updated.
+
+SQL>  select * from apsrtc;22
+  2
+SQL> select * from apsrtc where boarding='vzg' and upto='hyd';
+
+no rows selected
+
+SQL>  select * from apsrtc where boarding='kkd' and upto='rmc';
+
+SERVICE_NO SERVICE_TYPE         BOARDING        UPTO                   KMS
+---------- -------------------- --------------- --------------- ----------
+TICKET_PRICE
+------------
+777        luxury               kkd             rmc                     40
+          50
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
