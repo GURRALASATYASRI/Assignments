@@ -1,0 +1,38 @@
+create table restraunt(billid int,custname varchar2(25),phno number(10),amount number(10));
+
+Table created.
+
+SQL> create sequence awdc
+  2  start with 100001
+  3  increment by 1
+  4  minvalue 100001
+  5  maxvalue 100900
+  6  cycle;
+
+Sequence created.
+
+SQL> insert into restraunt(billid,custname,phno,amount)values(awdc.nextval,'&custname',&phno,&amount);
+Enter value for custname: satya
+Enter value for phno: 9010948263
+Enter value for amount: 350
+old   1: insert into restraunt(billid,custname,phno,amount)values(awdc.nextval,'&custname',&phno,&amount)
+new   1: insert into restraunt(billid,custname,phno,amount)values(awdc.nextval,'durga',9010948263,350)
+
+1 row created.
+
+SQL> select *from restraunt;
+
+    BILLID CUSTNAME                        PHNO     AMOUNT
+---------- ------------------------- ---------- ----------
+    100001 satya                     9010948263        350
+    100002 janu                      9177075770        500
+    100003 siva                      9010735578        400
+    100004 jaya                      9505466306        600
+    100005 jeevan                    9000951699        250
+    100006 satish                    8305233123        450
+    100007 iswarya                   8309520322        180
+    100008 khavinya                  9989250908        800
+    100009 lakshmi                   9000951236        700
+    100010 srinu                     6305578934        690
+
+10 rows selected.
