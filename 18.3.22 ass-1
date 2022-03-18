@@ -1,0 +1,96 @@
+SQL> create table stud(regno number(4) primary key,sname varchar2(30),grp varchar2(10),email_id varchar2(30),phno number(10));
+
+Table created.
+
+SQL>  create table exam(regno number(4) references stud(regno),s1 number(3),s2 number(3),s3 number(3),total number(5),avg number(5,2));
+
+Table created.
+
+SQL> insert into stud values(&regno,'&name','&group','&email',&phno);
+Enter value for regno: 1234
+Enter value for name: abcd
+Enter value for group: bsc
+Enter value for email: satyasrigurrala113@gmail.com
+Enter value for phno: 9988776633
+old   1: insert into stud values(&regno,'&name','&group','&email',&phno)
+new   1: insert into stud values(1234,'abcd','bsc','satyasrigurrala113@gmail.com',9988776633)
+
+1 row created.
+
+SQL> /
+Enter value for regno: 2345
+Enter value for name: acds
+Enter value for group: bba
+Enter value for email: satyasri113@gmail.com
+Enter value for phno: 8877994422
+old   1: insert into stud values(&regno,'&name','&group','&email',&phno)
+new   1: insert into stud values(2345,'acds','bba','satyasri113@gmail.com',8877994422)
+
+1 row created.
+
+
+
+SQL> select * from stud;
+
+     REGNO SNAME                          GRP
+---------- ------------------------------ ----------
+EMAIL_ID                             PHNO
+------------------------------ ----------
+      1234 abcd                           bsc
+satyasrigurrala113@gmail.com   9988776633
+
+      2345 acds                           bba
+satyasri113@gmail.com          8877994422
+
+
+SQL> insert into exam(regno,s1,s2,s3)values(&regno ,&s1,&s2,&s3);
+Enter value for regno:  1234
+Enter value for s1: 65
+Enter value for s2: 80
+Enter value for s3: 60
+old   1: insert into exam(regno,s1,s2,s3)values(&regno ,&s1,&s2,&s3)
+new   1: insert into exam(regno,s1,s2,s3)values( 1234 ,65,80,60)
+
+1 row created.
+
+SQL> /
+Enter value for regno: 2345
+Enter value for s1: 56
+Enter value for s2: 86
+Enter value for s3: 98
+old   1: insert into exam(regno,s1,s2,s3)values(&regno ,&s1,&s2,&s3)
+new   1: insert into exam(regno,s1,s2,s3)values(2345 ,56,86,98)
+
+1 row created.
+
+SQL> /
+Enter value for regno:  2345
+Enter value for s1: 75
+Enter value for s2: 65
+Enter value for s3: 36
+old   1: insert into exam(regno,s1,s2,s3)values(&regno ,&s1,&s2,&s3)
+new   1: insert into exam(regno,s1,s2,s3)values( 2345 ,75,65,36)
+
+1 row created.
+
+SQL> select * from exam;
+
+     REGNO         S1         S2         S3      TOTAL        AVG
+---------- ---------- ---------- ---------- ---------- ----------
+      1234         65         80         60
+      2345         56         86         98
+      2345         75         65         36
+
+SQL> update exam set total=s1+s2+s3 ,avg=(s1+s2+s3)/3;
+
+3 rows updated.
+
+SQL> select * from exam;
+
+     REGNO         S1         S2         S3      TOTAL        AVG
+---------- ---------- ---------- ---------- ---------- ----------
+      1234         65         80         60        205      68.33
+      2345         56         86         98        240         80
+      2345         75         65         36        176      58.67
+
+SQL>
