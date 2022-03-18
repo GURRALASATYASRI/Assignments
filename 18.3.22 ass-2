@@ -1,0 +1,35 @@
+create view result as select stud.regno,stud.sname,stud.grp,exam.s1,exam.s2,exam.s3,exam.total,exam.avg from stud,exam;
+
+View created.
+
+SQL> select * from result;
+
+     REGNO SNAME                          GRP                S1         S2
+---------- ------------------------------ ---------- ---------- ----------
+        S3      TOTAL        AVG
+---------- ---------- ----------
+      1234 abcd                           bsc                65         80
+        60        205      68.33
+
+      1234 abcd                           bsc                56         86
+        98        240         80
+
+      1234 abcd                           bsc                75         65
+        36        176      58.67
+
+
+     REGNO SNAME                          GRP                S1         S2
+---------- ------------------------------ ---------- ---------- ----------
+        S3      TOTAL        AVG
+---------- ---------- ----------
+      2345 acds                           bba                65         80
+        60        205      68.33
+
+      2345 acds                           bba                56         86
+        98        240         80
+
+      2345 acds                           bba                75         65
+        36        176      58.67
+
+
+6 rows selected.
