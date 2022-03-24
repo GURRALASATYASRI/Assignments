@@ -1,0 +1,137 @@
+SQL> conn
+Enter user-name: system
+Enter password:
+Connected.
+SQL>  create table emp(empno number(4),empname varchar2(20),empdesig varchar2(20),empsal number(5));
+
+Table created.
+
+SQL> insert into emp values(&no,'&name','&desig',&sal);
+Enter value for no: 12
+Enter value for name: satya
+Enter value for desig: employe
+Enter value for sal: 10000
+old   1: insert into emp values(&no,'&name','&desig',&sal)
+new   1: insert into emp values(12,'satya','employe',10000)
+
+1 row created.
+
+SQL> /
+Enter value for no: 13
+Enter value for name: sri
+Enter value for desig: faculty
+Enter value for sal: 15000
+old   1: insert into emp values(&no,'&name','&desig',&sal)
+new   1: insert into emp values(13,'sri','faculty',15000)
+
+1 row created.
+
+SQL> /
+Enter value for no: 14
+Enter value for name: satya sri
+Enter value for desig: teacher
+Enter value for sal: 20000
+old   1: insert into emp values(&no,'&name','&desig',&sal)
+new   1: insert into emp values(14,'satya sri','teacher',20000)
+
+1 row created.
+
+SQL> /
+Enter value for no: 15
+Enter value for name: srisatya
+Enter value for desig: bank employe
+Enter value for sal: 25000
+old   1: insert into emp values(&no,'&name','&desig',&sal)
+new   1: insert into emp values(15,'srisatya','bank employe',25000)
+
+1 row created.
+
+SQL> /
+Enter value for no: 16
+Enter value for name: aditya
+Enter value for desig: 30000
+Enter value for sal: /
+old   1: insert into emp values(&no,'&name','&desig',&sal)
+new   1: insert into emp values(16,'aditya','30000',/)
+insert into emp values(16,'aditya','30000',/)
+                                           *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL> /
+Enter value for no: 16
+Enter value for name: aditya
+Enter value for desig: office
+Enter value for sal: 30000
+old   1: insert into emp values(&no,'&name','&desig',&sal)
+new   1: insert into emp values(16,'aditya','office',30000)
+
+1 row created.
+
+SQL> /
+Enter value for no: 17
+Enter value for name: sai
+Enter value for desig: principal
+Enter value for sal: 35000
+old   1: insert into emp values(&no,'&name','&desig',&sal)
+new   1: insert into emp values(17,'sai','principal',35000)
+
+1 row created.
+
+SQL> /
+Enter value for no: 18
+Enter value for name: sai aditya
+Enter value for desig: manager
+Enter value for sal: 40000
+old   1: insert into emp values(&no,'&name','&desig',&sal)
+new   1: insert into emp values(18,'sai aditya','manager',40000)
+
+1 row created.
+
+SQL> /
+Enter value for no: 19
+Enter value for name: pavan
+Enter value for desig: business
+Enter value for sal: 50000
+old   1: insert into emp values(&no,'&name','&desig',&sal)
+new   1: insert into emp values(19,'pavan','business',50000)
+
+1 row created.
+
+SQL> /
+Enter value for no: 20
+Enter value for name: kumar
+Enter value for desig: general manager
+Enter value for sal: 60000
+old   1: insert into emp values(&no,'&name','&desig',&sal)
+new   1: insert into emp values(20,'kumar','general manager',60000)
+
+1 row created.
+
+SQL> /
+Enter value for no: 21
+Enter value for name: pavan kumar
+Enter value for desig: enginer
+Enter value for sal: 80000
+old   1: insert into emp values(&no,'&name','&desig',&sal)
+new   1: insert into emp values(21,'pavan kumar','enginer',80000)
+
+1 row created.
+
+SQL> select * from emp;
+
+     EMPNO EMPNAME              EMPDESIG                 EMPSAL
+---------- -------------------- -------------------- ----------
+        12 satya                employe                   10000
+        13 sri                  faculty                   15000
+        14 satya sri            teacher                   20000
+        15 srisatya             bank employe              25000
+        16 aditya               office                    30000
+        17 sai                  principal                 35000
+        18 sai aditya           manager                   40000
+        19 pavan                business                  50000
+        20 kumar                general manager           60000
+        21 pavan kumar          enginer                   80000
+
+10 rows selected.
