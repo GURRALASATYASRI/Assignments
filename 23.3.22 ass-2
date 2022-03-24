@@ -1,0 +1,36 @@
+SQL> set serveroutput on
+
+SQL> declare
+  2  x int;
+  3  begin
+  4  update emp set empsal=empsal+6500 where empsal>45000 and empsal<85000;
+  5  if sql%notfound then
+  6  dbms_output.put_line('not updated');
+  7  elsif sql%found then
+  8  x:=sql%rowcount;
+  9  dbms_output.put_line(x||'  emp salaries updated');
+ 10  end if;
+ 11  end;
+ 12
+ 13  /
+
+
+SQL> select * from emp;
+
+
+SQL> declare
+  2  no emp.empno%type;
+  3  name emp.empname%type;
+  4  sal emp.empsal%type;
+  5  cursor e is select empno,empname,empsal from emp;
+  6  begin
+  7  open e;
+  8  loop
+  9  fetch e into no,name,sal;
+ 10  exit when e%notfound;
+ 11  dbms_output.put_line('emp number='||no||'  emp name='||name||'  emp salary='||sal);
+ 12  end loop;
+ 13  close e;
+ 14  end;
+ 15
+ 16  /
