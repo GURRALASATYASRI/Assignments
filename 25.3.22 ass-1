@@ -1,0 +1,130 @@
+SQL> conn
+Enter user-name: system
+Enter password:
+Connected.
+SQL> create table employee(eno number(4),ename varchar2(20),design varchar2(20),dob date,doj date,salary number(6));
+
+Table created.
+SQL> /
+Enter value for no: 01
+Enter value for name: satya
+Enter value for desig: faculty
+Enter value for dob: 01-jan-1996
+Enter value for doj: 01-jan-2014
+Enter value for sal: 20000
+old   1: insert into employee values(&no,'&name','&desig','&dob','&doj',&sal)
+new   1: insert into employee values(01,'satya','faculty','01-jan-1996','01-jan-2014',20000)
+
+1 row created.
+
+1 row created.
+
+SQL> /
+Enter value for no: 02
+Enter value for name: sri
+Enter value for desig: manager
+Enter value for dob: 26-12-2000
+Enter value for doj: 11-/
+Enter value for sal: /
+old   1: insert into employee values(&no,'&name','&desig','&dob','&doj',&sal)
+new   1: insert into employee values(02,'sri','manager','26-12-2000','11-/',/)
+insert into employee values(02,'sri','manager','26-12-2000','11-/',/)
+                                                                   *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL> /
+Enter value for no: 02
+Enter value for name: pavan
+Enter value for desig: manager
+Enter value for dob: 26-dec-2000
+Enter value for doj: 15-march-2020
+Enter value for sal: 25000
+old   1: insert into employee values(&no,'&name','&desig','&dob','&doj',&sal)
+new   1: insert into employee values(02,'pavan','manager','26-dec-2000','15-march-2020',25000)
+
+1 row created.
+
+SQL> /
+Enter value for no: 03
+Enter value for name: sri
+Enter value for desig: hr
+Enter value for dob: 02-feb-2003
+Enter value for doj: 14-june-2021
+Enter value for sal: 35000
+old   1: insert into employee values(&no,'&name','&desig','&dob','&doj',&sal)
+new   1: insert into employee values(03,'sri','hr','02-feb-2003','14-june-2021',35000)
+
+1 row created.
+
+SQL> /
+Enter value for no: 04
+Enter value for name: satya sri
+Enter value for desig: engineer
+Enter value for dob: 05-may-1998
+Enter value for doj: 08-dec-2005
+Enter value for sal: 50000
+old   1: insert into employee values(&no,'&name','&desig','&dob','&doj',&sal)
+new   1: insert into employee values(04,'satya sri','engineer','05-may-1998','08-dec-2005',50000)
+
+1 row created.
+
+SQL> /
+Enter value for no: 05
+Enter value for name: sri satya
+Enter value for desig: bank employe
+Enter value for dob: 05-july-1987
+Enter value for doj: 12-sep-2002
+Enter value for sal: 60000
+old   1: insert into employee values(&no,'&name','&desig','&dob','&doj',&sal)
+new   1: insert into employee values(05,'sri satya','bank employe','05-july-1987','12-sep-2002',60000)
+
+1 row created.
+
+SQL>  select * from employee;
+
+       ENO ENAME                DESIGN               DOB       DOJ
+---------- -------------------- -------------------- --------- ---------
+    SALARY
+----------
+         1 satya                faculty              01-JAN-96 01-JAN-14
+     20000
+
+         2 pavan                manager              26-DEC-00 15-MAR-20
+     25000
+
+         3 sri                  hr                   02-FEB-03 14-JUN-21
+     35000
+
+
+       ENO ENAME                DESIGN               DOB       DOJ
+---------- -------------------- -------------------- --------- ---------
+    SALARY
+----------
+         4 satya sri            engineer             05-MAY-98 08-DEC-05
+     50000
+
+         5 sri satya            bank employe         05-JUL-87 12-SEP-02
+     60000
+
+
+SQL> select eno,ename,trunc((sysdate-to_date(doj))/365.25,0) as experience_in_years from employee;
+
+       ENO ENAME                EXPERIENCE_IN_YEARS
+---------- -------------------- -------------------
+         1 satya                                  8
+         2 pavan                                  2
+         3 sri                                    0
+         4 satya sri                             16
+         5 sri satya                             19
+
+SQL>  select eno,ename,trunc((sysdate-to_date(dob))/365.25,0) as age_in_years from employee;
+
+       ENO ENAME                AGE_IN_YEARS
+---------- -------------------- ------------
+         1 satya                          26
+         2 pavan                          21
+         3 sri                            19
+         4 satya sri                      23
+         5 sri satya                      34
